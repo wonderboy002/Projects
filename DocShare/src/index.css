@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
 *{
     box-sizing: border-box;
     margin: 0;
@@ -11,4 +12,28 @@
 footer{
    position: absolute;
    bottom: 0;
+}
+
+.homepage{
+    font-family: 'Libre Baskerville', serif;
+}
+
+
+.right h1{
+    line-height: 2;
+    word-wrap: normal;
+}
+
+.get{
+    border: 1px solid teal;
+    color: teal;
+    padding: 1rem;
+    border-radius: 40px;
+    transition-property: all;
+    transition-duration: 1s;
+}
+
+.get:hover{
+    background-color: teal;
+    color: white;
 }

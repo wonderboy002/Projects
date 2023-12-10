@@ -9,7 +9,7 @@ function App() {
 
   return (
     <>
-      <div className="App min-h-screen relative flex flex-col">
+      <div className="App h-screen relative flex flex-col">
        <Navbar/>
        <Footer/>
       </div>
