@@ -6,13 +6,14 @@ import moye from "../audio/moye_moye.mp3";
 import gali from "../audio/gali.mp3";
 
 
-const CustomD = ({ open, IMG}) => {
+const CustomD = ({ open, IMG,audio}) => {
     const [flag,setFlag]=useState(open);
-    const thala = new Audio(gali);
+    const thala = new Audio(audio);
 
     useEffect(()=>{
-        if (open){
+        if (audio && open){
             thala.play();
+            
         }
     },[open])
  
@@ -32,7 +33,7 @@ const CustomD = ({ open, IMG}) => {
         onClose={handleClose}
         aria-labelledby="responsive-dialog-title"
       >
-        <div className="dialog p-4 md:w-[350px] rounded-md h-[400px]">
+        <div className="dialog p-4 md:w-[350px] rounded-md h-[350px]">
           <img
             src={IMG}
             className="h-full w-full"
