@@ -31,8 +31,9 @@ const Signup = () => {
   };
 
 
-  const google=()=>{
-    account.createOAuth2Session('google');
+  const google=(e)=>{
+    e.preventDefault();
+    account.createOAuth2Session('google','http://localhost:5173/Profile','http://localhost:5173/');
   }
 
   return (
