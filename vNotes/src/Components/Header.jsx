@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 
 const Header = () => {
   useEffect(()=>{
-    console.log("appwrite project id : ",import.meta.env.VITE_Key);
+    console.log("appwrite project id : ",import.meta.env.VITE_API);
   },[])
   return (
     <div className="w-full Header bg-red-500 flex flex-col text-white p-8 h-[450px]">
