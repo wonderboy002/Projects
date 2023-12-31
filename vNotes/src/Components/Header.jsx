@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
+import {Link} from "react-router-dom";
 
 const Header = () => {
+  useEffect(()=>{
+    console.log("appwrite project id : ",import.meta.env.VITE_Key);
+  },[])
   return (
     <div className="w-full Header bg-red-500 flex flex-col text-white p-8 h-[450px]">
       <div className="navigation flex items-center">
@@ -18,10 +22,10 @@ const Header = () => {
           Take Your Productivity to next steps using our notes app
         </h1>
         <div className="buttons mx-auto flex gap-4">
-          <button className="signup p-4 rounded-xl transition-all hover:bg-black hover:scale-95">
+          <Link className="signup p-4 rounded-xl transition-all hover:bg-black hover:scale-95" to="/Signup">
              Sign up
-          </button>
-          <button className="login p-4 roundex-xl transition-all hover:bg-white hover:rounded-xl hover:text-black hover:scale-95">Login</button>
+          </Link>
+          <Link className="login p-4 roundex-xl transition-all hover:bg-white hover:rounded-xl hover:text-black hover:scale-95" to="/Login">Login</Link>
         </div>
       </div>
       <div></div>

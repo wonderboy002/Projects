@@ -1,2 +1,4 @@
 import Header from "./Header";
-export {Header}
+import Signup from "./Signup";
+import Login from "./Login";
+export {Header,Signup,Login}
