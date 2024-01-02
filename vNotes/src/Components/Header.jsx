@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import conf from "../Conf/conf";
 const Header = () => {
   return (
     <div className="w-full Header bg-red-500 flex flex-col text-white p-8 h-[450px]">

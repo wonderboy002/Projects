@@ -1,45 +1,43 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { account } from "../appwrite/appwrite";
+import { auth } from "../firebase/config";
+import {signOut} from "firebase/auth";
+
 //for creating accounts of users
 import { useNavigate, useSearchParams } from "react-router-dom";
+import useLog from "../Context/log";
 const Profile = () => {
   const navigate = useNavigate();
   const [ud, setUd] = useState(null);
-  useEffect(() => {
-    const data = account.get();
-    data.then(
-      function (response) {
-        if (response) {
-          setUd(response);
-        }
-      },
-      function (error) {
-        console.log(error);
-      }
-    );
-  }, []);
+  const {logged,loggedIn,loggedOut}=useLog();
 
   const logoutUser = async () => {
     try {
-      await account.deleteSession("current");
-      alert("User logged out successfully");
-      navigate("/Signup");
+      await signOut(auth);
+      alert("Logged out successfully");
+      loggedOut();
+      setUd(null);
     } catch (e) {
       console.log(e);
     }
   };
-
   useEffect(() => {
-    console.log(ud);
-    const existingAccount =  account.get({ email: "nipunkup@gmail.com" });
-    console.log("Existing Account:", existingAccount);
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        setUd(user);
+        console.log(user.email);
+      } else {
+        console.log("No user is currently signed in");
+      }
+    });
 
-  }, [ud]);
+    return () => unsubscribe();
+  }, []);
+
   return (
     <>
       <div>This is a profile page</div>
-      <button onClick={logoutUser} className="bg-red-400 p-4 hover:bg-red-600">Logout</button>
+      {ud && <button onClick={logoutUser} className="bg-red-500 p-4 rounded-lg">Logout</button>}
     </>
   );
 };

@@ -2,8 +2,9 @@ import React from "react";
 import TextField from "@mui/material/TextField";
 import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
 import { useState } from "react";
-import { account } from "../appwrite/appwrite.js";
 import { useNavigate } from "react-router-dom";
+import { auth } from "../firebase/config";
+import {signInWithEmailAndPassword} from "firebase/auth";
 
 const Login = () => {
   const navigate=useNavigate();
@@ -11,17 +12,19 @@ const Login = () => {
     email: "",
     password: "",
   });
+
   const loginUser=async ()=>{
     try {
-     await account.createEmailSession(user.email,user.password);
-     alert("User Successfully logged in");
-     navigate("/Profile");
+      await signInWithEmailAndPassword(auth,user.email,user.password);
+      alert('successfully logged in');
+      navigate("/Profile");
     }
     catch(e){
-      alert("Problem while logging in")
+      alert("error logging in : ");
       console.log(e);
     }
   }
+  
   return (
     <div className="mt-32 login-parent w-full min-h-full flex flex-col gap-4 items-center">
       <h1 className="text-2xl font-bold">
@@ -49,7 +52,9 @@ const Login = () => {
           setUser((prev) => ({ ...prev, [e.target.name]: e.target.value }))
         }
       />{" "}
-      <button onClick={loginUser} className="bg-purple w-2/5 p-4 flex items-center justify-center gap-2 transition-all hover:scale-95 text-white font-bold hover:rounded-xl">
+      <button  
+      onClick={loginUser}
+      className="bg-purple w-2/5 p-4 flex items-center justify-center gap-2 transition-all hover:scale-95 text-white font-bold hover:rounded-xl">
         <VerifiedUserIcon />
         Login
       </button>
