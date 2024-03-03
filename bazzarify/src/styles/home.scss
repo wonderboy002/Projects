@@ -1,0 +1,109 @@
+.homePage{
+    padding: 2rem 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    // height: calc(100vh - 4rem);
+    width: 100%;
+
+    > section   {
+       width: 100%;
+       height: 20rem;
+       background: url(../assets/images/mainCover.jpg) no-repeat center/cover;
+      
+    }
+
+    > main {
+      display: flex;
+      gap: 2rem;
+    }
+
+    > .temp{
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        align-items: center
+    }
+
+    > .temp > .moreButton{
+        margin-left: auto;
+        color: slategray;
+    }
+
+    > div > h1{
+        @include heading(2px);
+        
+        margin-top: 2rem;
+        @include flex(row,space-between,center);
+    }
+}
+
+$color3 : #0c9d79;
+
+.productCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    position: relative;
+    padding: 1rem;
+    width: 270px;
+    box-shadow: 3px 3px 5px 5px #dfe6e9;
+    border-radius: 10px;
+    transition: all 0.6;
+
+    &:hover{
+        > div {
+            opacity: 1;
+        }
+        background-color: #d1d8e0;
+    }
+    > img {
+        height: 250px;
+        width: 250px;
+    }
+
+    > p,span{
+        font-size: 1.1rem;
+        text-align: center;
+        font-weight: 700;
+    }
+
+    > div{
+        position: absolute;
+        @include square(100%);
+        top: 0;
+        left: 0;
+        opacity: 0;
+        @include flex;
+        button {
+            @include flex;
+            @include square(3rem);
+            border-radius: 100%;
+            cursor: pointer;
+            border: none;
+            background-color: $color3;
+            color: whitesmoke;
+            transition: all 0.3;
+
+            &:hover{
+                rotate: 20deg;
+            }
+        }
+    }
+
+ 
+
+    // > div > button {
+    //     border: none;
+    //     background-color: #192a56;
+    //     color: whitesmoke;
+    //     padding: 6px;
+    //     border-radius: 100%;
+    //     cursor: pointer;
+
+    //     &:hover{
+    //         background-color: #273c75;
+    //     }
+    // }
+}

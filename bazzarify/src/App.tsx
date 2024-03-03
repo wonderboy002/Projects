@@ -5,6 +5,7 @@ import Loading from "./Components/Loading";
 const Home = lazy(() => import("./Pages/Home"));
 const Cart = lazy(() => import("./Pages/Cart"));
 const Search = lazy(() => import("./Pages/Search"));
+import Header from "./Components/Header";
 
 //adming dashboard routes
 const Dashboard = lazy(() => import("./Pages/admin/dashboard"));
@@ -28,6 +29,8 @@ const App = () => {
   return (
     <Router>
       {/* {Header component goes here} */}
+      <Header/>
+      
       <Suspense fallback={<Loading />}>
         <Routes>
           <Route path="/" element={<Home />} />

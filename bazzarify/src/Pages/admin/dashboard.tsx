@@ -5,7 +5,7 @@ import { HiTrendingDown, HiTrendingUp } from "react-icons/hi";
 import AdminSidebar from "../../Components/admin/AdminSidebar";
 import { BarChart, DoughnutChart } from "../../Components/admin/Charts";
 import Table from "../../Components/admin/DashboardTable";
-
+import data from "../../assets/data.json";
 const userImg =
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJxA5cTf-5dh5Eusm0puHbvAhOrCRPtckzjA&usqp";
 
@@ -95,7 +95,7 @@ const Dashboard = () => {
               <BiMaleFemale />
             </p>
           </div>
-          <Table data={transaction} />
+          <Table data={data.transaction} />
         </section>
       </main>
     </div>
