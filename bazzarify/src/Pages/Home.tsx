@@ -12,8 +12,8 @@ const Home = () => {
         <Link className="moreButton" to="/Search">More</Link>
       </div>
       <main>
-        <Card name="Boat airdopes" id="abibas" image="https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGhlYWRwaG9uZXN8ZW58MHx8MHx8fDA%3D" price={1200} stock={40} handler={() => { }} />
-        <Card name="Gta V" id="adibas" image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVfmdwFO50d0FUcXq_Q20d_PNJQ9PSNxDJGw&usqp=CAU" price={200} stock={30} handler={() => { }} />
+        <Card name="Boat airdopes" id="abibas" image="https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGhlYWRwaG9uZXN8ZW58MHx8MHx8fDA%3D" price={1700} stock={40} handler={() => { }} />
+        <Card name="Gta V" id="adibas" image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVfmdwFO50d0FUcXq_Q20d_PNJQ9PSNxDJGw&usqp=CAU" price={2500} stock={30} handler={() => { }} />
       </main>
     </div>
   );

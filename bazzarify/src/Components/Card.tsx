@@ -13,7 +13,7 @@ const Card = ({name,id,image,price,stock,handler}:productProps) => {
     <div className="productCard">
       <img src={image} alt={name} />
       <p>{name}</p>
-      <span>${price}</span>
+      <span>₹{price}</span>
       <div>
         <button onClick={()=>handler()}><FaPlus/></button>
       </div>
