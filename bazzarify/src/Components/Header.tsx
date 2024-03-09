@@ -32,7 +32,7 @@ function Header() {
 
                                 }
                                 <Link onClick={()=>setIsOpen(false)} to="/orders">Orders</Link>
-                                <button><FaSignOutAlt></FaSignOutAlt></button>
+                                <Link to="/Login"><FaSignOutAlt></FaSignOutAlt></Link>
                             </div>
                         </dialog>
                     </>

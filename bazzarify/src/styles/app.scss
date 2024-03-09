@@ -15,6 +15,10 @@ a {
   color: black;
 }
 
+body{
+  
+}
+
 .red {
   color: red;
 }
@@ -30,6 +34,8 @@ a {
 @import "admin-styles/mixin";
 @import "home.scss";
 @import "cart.scss";
+@import "shipping.scss";
+@import "LoginPage.scss";
 @import "admin-styles/dashboard";
 @import "admin-styles/products";
 @import "admin-styles/chart";

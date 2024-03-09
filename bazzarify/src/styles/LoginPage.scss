@@ -1,0 +1,46 @@
+
+
+$color1 : #c8d6e5;
+$color2 : #222f3e;
+$color3 : #10ac84;
+.LoginPage {
+    height: 80vh;
+    @include flex(column, center, center, 2rem);
+    h1{
+        font-weight: 400;
+        text-transform: uppercase
+    }
+    >main {
+        @include flex(column, center, stretch, 1rem);
+
+        >.gender {
+            @include flex(column, space-between, 0.6rem);
+            > select{
+                padding: 8px;
+            }
+        }
+
+        >.dob {
+
+            @include flex(column, space-between, 0.6rem);
+            > input{
+                padding: 8px;
+            }
+        }
+
+        >.google {
+            @include flex(column, space-between, 0.6rem);
+            
+            > .googleSignin{
+                @include flex(flex,center,center,0.5rem);
+                background-color: $color1;
+                cursor: pointer;
+                text-transform: capitalize;
+                font-weight: 600;
+                padding: 9px;
+
+            }
+
+        }
+    }
+}
